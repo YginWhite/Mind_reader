@@ -1,0 +1,79 @@
+There are  four objects: model, view, controller and global.
+
+Object global contains next properties:
+	start:    link on the start button;
+    next:     link on the next button;
+	btns:     link on the top/center/bottom buttons;
+    view:     link on container for rows of cards;
+    tip:      link on the footer for tips;
+	cardRows: ink on container for each row cards;
+    image:    link on image of cards.
+	
+Object model contains next properties(methods):	
+	randomNumber:    return random number;
+	makeSuite:       returns an array of integers from 0 to 35 length  21;
+	laySuiteIn3rows: It lays out the set in three rows;
+	Card:            constructor for card.
+	
+Object view contains next properties(methods):
+	cardSet:         returns the set(array) of cards length  21;
+	showCards:       displays the set in 3 rows of 7 cards in the series;
+	showCardsInRows: lays out the cards in three rows;
+	showRezult:      displays user card.
+	
+Object controller contains next properties(methods):
+	times: common counts of pressed top/center/bottom buttons;
+	init:  assigns handlers to the controll buttons;
+	
+---------------------------------------------------------------------------------------------------
+
+When start button clicked run handler which:
+	- checks whether there is a startFlag;
+		- delete legend "Press START and look down to tips";
+		- displays the set in 3 rows of 7 cards in the series and assign it as global.suite property;
+		- remove attribute hidden on containers for displaying set of cards;
+		- appends the legend "Remember a card and press NEXT" in container for tips;
+	- sets true to startFlag.
+		
+		if !controller.startFlag 
+			remove from  global.view "Press START and look down to tips"
+			global.suite = view.showCards()
+			remove attribute hidden from global.cardRows
+			append "Remember a card and press NEXT" to global.tip
+		set controller.startFlag = true
+		
+Then user have to press next button. If this is done run handler which:
+	- checks controller.startFlag is equal true? and there is controller.nextFlag?;
+		- lays out the set in three rows;
+		- assign it set as global.suite property;
+		- collects three rows in a heap and displays the set in 3 rows of 7 cards in the series;
+		- appends "In which row is your card? Press: top/center/bottom" to tip container;
+		- set selFlag = true, nextFlag = true.
+	
+		if controller.startFlag and !controller.nextFlag
+			suite = model.laySuiteIn3rows(global.suite)
+			global.suite = suite
+			suite = suite.row1 concat suite.row2 concat suite.row3
+			view.showCards(suite)
+			append "In which row is your card? Press: top/center/bottom" to global.tip
+			set selFlag = true, nextFlag = true
+			
+After next button user have to press any of top/center/bottom buttons. If he did this run handler which:
+	- checks which button is pressed;
+	- checks controller.selFlag is equal true and controller.times < 3;
+		- lays out the set in three rows in order to pressed button;
+		- increments controller.times
+		
+		target = e.target;
+		cls = target get attribute "class"
+		if cls equal "le" btn = 'top'
+        else if equal "ce" btn = 'center';
+        else btn = 'bottom';
+        if controller.selFlag and controller.times < 3
+			view.showCardsInRows(global.suite, pressed button)
+			controller.times += 1
+	
+-----------------------------------------------------------------------------------------------------
+
+For more datail how works this methods see failes for testing.
+		
