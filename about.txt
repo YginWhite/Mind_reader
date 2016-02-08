@@ -2,12 +2,12 @@ There are  four objects: model, view, controller and global.
 
 Object global contains next properties:
 	start:    link on the start button;
-    next:     link on the next button;
+	next:     link on the next button;
 	btns:     link on the top/center/bottom buttons;
-    view:     link on container for rows of cards;
-    tip:      link on the footer for tips;
+	view:     link on container for rows of cards;
+	tip:      link on the footer for tips;
 	cardRows: ink on container for each row cards;
-    image:    link on image of cards.
+	image:    link on image of cards.
 	
 Object model contains next properties(methods):	
 	randomNumber:    return random number;
@@ -67,9 +67,9 @@ After next button user have to press any of top/center/bottom buttons. If he did
 		target = e.target;
 		cls = target get attribute "class"
 		if cls equal "le" btn = 'top'
-        else if equal "ce" btn = 'center';
-        else btn = 'bottom';
-        if controller.selFlag and controller.times < 3
+		else if equal "ce" btn = 'center';
+		else btn = 'bottom';
+		if controller.selFlag and controller.times < 3
 			view.showCardsInRows(global.suite, pressed button)
 			controller.times += 1
 	
