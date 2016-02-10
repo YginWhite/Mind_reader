@@ -37,6 +37,14 @@
 	position: relative;
 }
 
+.output_next {
+	float: left;
+	width: 30%;
+	margin: 5px;
+	margin-left: 10px;
+	height: 480px;
+}
+
 /*--------------end veiw block-----------------*/
 /*---------------control block-----------------*/
 
@@ -92,6 +100,7 @@
 .img {
 	width: 101px;
 	height: 150px;
+	margin-left: 20px;
 	background: #D3CFCF url("../img/suite.png") no-repeat;
 	position: absolute;
 }
