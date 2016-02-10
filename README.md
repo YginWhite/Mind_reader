@@ -1,6 +1,9 @@
----Here style card layout will be changed to horizontal---
+-------------------------------------------------------------
 
----Animation card layout will be made---
+The engin of this branch little different than on master.
+Card now display on three columns. Add animation.
+
+-------------------------------------------------------------
 
 This is the card game.
 User memorizes a card and computer guesses this card.
