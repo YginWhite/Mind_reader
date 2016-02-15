@@ -1,3 +1,5 @@
+--Version on branch canvas is more better--
+
 This is the card game.
 User memorizes a card and computer guesses this card.
 
