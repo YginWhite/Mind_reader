@@ -1,4 +1,12 @@
---Version on branch canvas is more better--
+--------------------------------------------------------------------------------------
+
+The purposes of this project is implement game on DOM manipulations and on Canvas element.
+
+Its branch for DOM implementation. 
+
+See branch canvas for Canvas! Its more better then DOM.
+
+---------------------------------------------------------------------------------------
 
 This is the card game.
 User memorizes a card and computer guesses this card.
